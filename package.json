@@ -7,7 +7,8 @@
     "test": "vitest run",
     "test:watch": "vitest run --watch",
     "lint": "eslint src --ext .ts --fix",
-    "lint:fix": "eslint src --ext .ts --fix"
+    "lint:fix": "eslint src --ext .ts --fix",
+    "build": "rm -rf ./build; npx tsc"
   },
   "keywords": [],
   "author": "",
