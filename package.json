@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest run",
-    "test:watch": "vitest run --watch"
+    "test:watch": "vitest run --watch",
+    "lint": "eslint src --ext .ts --fix",
+    "lint:fix": "eslint src --ext .ts --fix"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,9 @@
     "vitest": "^1.2.1"
   },
   "dependencies": {
-    "dayjs": "^1.11.10"
+    "@rocketseat/eslint-config": "^2.1.0",
+    "dayjs": "^1.11.10",
+    "eslint": "^8.56.0",
+    "eslint-plugin-vitest-globals": "^1.4.0"
   }
 }

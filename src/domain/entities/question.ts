@@ -18,21 +18,36 @@ export class Question extends Entity<QuestionProps> {
   get content() {
     return this.props.content;
   }
+
+  set content(value: string) {
+    this.props.content = value;
+  }
+
   get authorId() {
     return this.props.authorId;
   }
+
   get title() {
     return this.props.title;
   }
+  set title(value: string) {
+    this.props.title = value;
+    this.props.slug = Slug.createFromText(value);
+    this.touch();
+  }
+
   get slug() {
     return this.props.slug;
   }
+
   get createdAt() {
     return this.props.createdAt;
   }
+
   get updatedAt() {
     return this.props.updatedAt;
   }
+
   get isNew() {
     return dayjs().diff(this.props.createdAt, "day") <= 3;
   }
@@ -46,14 +61,6 @@ export class Question extends Entity<QuestionProps> {
     return this.props.content.substring(0, 120).trimEnd().concat("...");
   }
 
-  set content(value: string) {
-    this.props.content = value;
-  }
-  set title(value: string) {
-    this.props.title = value;
-    this.props.slug = Slug.createFromText(value);
-    this.touch();
-  }
   set bestAnswerId(bestAnswerId: UniqueEntityID) {
     this.props.bestAnswerId = bestAnswerId;
     this.touch();
