@@ -1,20 +1,24 @@
-import { expect, test } from "vitest";
+import { expect, test, describe, beforeEach } from "vitest";
 import { AnswerQuestionUseCase } from "./answer-question";
-import { Answer } from "@/domain/entities/answer";
-import { AnswerRepository } from "@/domain/forum/application/repositories/answer-repository";
+import { InMemoryAnswersRepository } from "test/repositories/in-memory-answers-repository";
 
-const fakeAnswerRepository: AnswerRepository = {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  create: async (answer: Answer) => {},
-};
+let inMemoryAnwerRepository: InMemoryAnswersRepository;
+let sut: AnswerQuestionUseCase;
 
-test("Create an answer", async () => {
-  const answerQuestion = new AnswerQuestionUseCase(fakeAnswerRepository);
-  const answer = await answerQuestion.execute({
-    instructorId: "any_id",
-    questionId: "any_id",
-    content: "any content",
+describe("Create a answer", async () => {
+  beforeEach(() => {
+    inMemoryAnwerRepository = new InMemoryAnswersRepository();
+    sut = new AnswerQuestionUseCase(inMemoryAnwerRepository);
   });
 
-  expect(answer.content).toEqual("any content");
+  test("Should be able to create a answer", async () => {
+    const { answer } = await sut.execute({
+      questionId: "1",
+      instructorId: "2",
+      content: "any content",
+    });
+
+    expect(answer.id).toBeTruthy();
+    expect(inMemoryAnwerRepository.items[0].id).toEqual(answer.id);
+  });
 });
