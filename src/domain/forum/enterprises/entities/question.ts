@@ -54,7 +54,6 @@ export class Question extends Entity<QuestionProps> {
 
   private touch() {
     this.props.updatedAt = new Date();
-    this.touch();
   }
 
   get excerpt() {
