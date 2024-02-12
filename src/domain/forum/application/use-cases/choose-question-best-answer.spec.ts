@@ -31,14 +31,11 @@ describe("Choose Question Best Answer", () => {
     await inMemoryQuestionsRepository.create(question);
     await inMemoryAnswersRepository.create(answer);
 
-    console.log(
-      await sut.execute({
-        answerId: answer.id.toString(),
-        authorId: question.authorId.toString(),
-      })
-    );
+    await sut.execute({
+      answerId: answer.id.toString(),
+      authorId: question.authorId.toString(),
+    });
 
-    console.log(inMemoryQuestionsRepository.items[0].bestAnswerId);
     expect(inMemoryQuestionsRepository.items[0].bestAnswerId).toEqual(
       answer.id
     );

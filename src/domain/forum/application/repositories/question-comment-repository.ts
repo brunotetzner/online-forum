@@ -1,5 +1,7 @@
-import { QuestionComment } from "../../enterprises/entities/answer-comment";
+import { QuestionComment } from "../../enterprises/entities/question-comment";
 
 export interface QuestionCommentRepository {
-  create(questionComment: QuestionComment): Promise<void>;
+  create(answerComment: QuestionComment): Promise<void>;
+  delete(answerComment: QuestionComment): Promise<void>;
+  findById(id: string): Promise<QuestionComment | null>;
 }

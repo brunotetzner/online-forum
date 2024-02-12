@@ -1,5 +1,5 @@
 import { QuestionCommentRepository } from "@/domain/forum/application/repositories/question-comment-repository";
-import { QuestionComment } from "@/domain/forum/enterprises/entities/answer-comment";
+import { QuestionComment } from "@/domain/forum/enterprises/entities/question-comment";
 
 export class InMemoryQuestionCommentsRepository
   implements QuestionCommentRepository
@@ -8,5 +8,19 @@ export class InMemoryQuestionCommentsRepository
 
   async create(questionComment: QuestionComment): Promise<void> {
     this.items.push(questionComment);
+  }
+
+  async findById(id: string): Promise<QuestionComment | null> {
+    const questionComment = this.items.find(
+      (questionComment) => questionComment.id.toString() === id
+    );
+    return questionComment || null;
+  }
+
+  async delete(questionComment: QuestionComment): Promise<void> {
+    const itemIdentifier = this.items.findIndex(
+      (item) => item.id === questionComment.id
+    );
+    this.items.splice(itemIdentifier, 1);
   }
 }
