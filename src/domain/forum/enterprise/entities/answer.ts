@@ -1,7 +1,7 @@
-import { Entity } from "@/core/entities/entities";
+import { Entity } from "@/core/entities/entity";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { Optional } from "@/core/types/optional";
-import { AnswerAttachmentList } from "@/domain/forum/enterprises/entities/answer-attachment-list";
+import { AnswerAttachmentList } from "@/domain/forum/enterprise/entities/answer-attachment-list";
 
 export interface AnswerProps {
   content: string;

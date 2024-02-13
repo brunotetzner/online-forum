@@ -1,6 +1,6 @@
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { QuestionRepository } from "../repositories/question-repository";
-import { QuestionComment } from "../../enterprises/entities/question-comment";
+import { QuestionComment } from "../../enterprise/entities/question-comment";
 import { QuestionCommentRepository } from "../repositories/question-comment-repository";
 import { Either, left, right } from "@/core/either";
 import { ResourceNotFoundError } from "@/domain/forum/application/use-cases/errors/resource-not-found";

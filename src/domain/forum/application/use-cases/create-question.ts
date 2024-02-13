@@ -1,9 +1,9 @@
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { QuestionRepository } from "../repositories/question-repository";
-import { Question } from "../../enterprises/entities/question";
+import { Question } from "../../enterprise/entities/question";
 import { Either, right } from "@/core/either";
-import { QuestionAttachment } from "../../enterprises/entities/question-attachment";
-import { QuestionAttachmentList } from "../../enterprises/entities/question-attachment-list";
+import { QuestionAttachment } from "../../enterprise/entities/question-attachment";
+import { QuestionAttachmentList } from "../../enterprise/entities/question-attachment-list";
 
 interface CreateQuestionUseCaseRequest {
   authorId: string;

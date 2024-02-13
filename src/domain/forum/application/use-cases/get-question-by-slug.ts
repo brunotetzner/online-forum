@@ -1,6 +1,6 @@
-import { Question } from "@/domain/forum/enterprises/entities/question";
+import { Question } from "@/domain/forum/enterprise/entities/question";
 import { QuestionRepository } from "../repositories/question-repository";
-import { Slug } from "../../enterprises/entities/value-objec/slug";
+import { Slug } from "../../enterprise/entities/value-objec/slug";
 import { Either, left, right } from "@/core/either";
 import { ResourceNotFoundError } from "./errors/resource-not-found";
 

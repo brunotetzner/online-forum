@@ -1,4 +1,4 @@
-import { Question } from "@/domain/forum/enterprises/entities/question";
+import { Question } from "@/domain/forum/enterprise/entities/question";
 import { QuestionRepository } from "../repositories/question-repository";
 import { Either, right } from "@/core/either";
 

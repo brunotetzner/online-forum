@@ -1,7 +1,7 @@
 import { GetQuestionBySlugUseCase } from "./get-question-by-slug";
 import { InMemoryQuestionsRepository } from "test/repositories/in-memory-questions-repository";
 import { makeQuestion } from "test/factories/make-question";
-import { Slug } from "../../enterprises/entities/value-objec/slug";
+import { Slug } from "../../enterprise/entities/value-objec/slug";
 import { describe, beforeEach, it, expect } from "vitest";
 import { InMemoryQuestionAttachmentsRepository } from "test/repositories/in-memory-question-attachments-repository";
 

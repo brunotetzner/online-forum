@@ -1,7 +1,7 @@
 import { PaginationParams } from "@/core/repositories/pagination-params";
 import { QuestionRepository } from "@/domain/forum/application/repositories/question-repository";
-import { Question } from "@/domain/forum/enterprises/entities/question";
-import { Slug } from "@/domain/forum/enterprises/entities/value-objec/slug";
+import { Question } from "@/domain/forum/enterprise/entities/question";
+import { Slug } from "@/domain/forum/enterprise/entities/value-objec/slug";
 import { QuestionAttachmentsRepository } from "@/domain/forum/application/repositories/question-attachment-repository";
 
 export class InMemoryQuestionsRepository implements QuestionRepository {

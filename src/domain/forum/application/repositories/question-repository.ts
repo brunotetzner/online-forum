@@ -1,6 +1,6 @@
 import { PaginationParams } from "@/core/repositories/pagination-params";
-import { Question } from "../../enterprises/entities/question";
-import { Slug } from "../../enterprises/entities/value-objec/slug";
+import { Question } from "../../enterprise/entities/question";
+import { Slug } from "../../enterprise/entities/value-objec/slug";
 
 export interface QuestionRepository {
   findById(id: string): Promise<Question | null>;

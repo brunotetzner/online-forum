@@ -1,11 +1,11 @@
 import { Either, left, right } from "@/core/either";
-import { Question } from "../../enterprises/entities/question";
+import { Question } from "../../enterprise/entities/question";
 import { QuestionRepository } from "../repositories/question-repository";
 import { NotAllowedError } from "./errors/not-allowed";
 import { ResourceNotFoundError } from "./errors/resource-not-found";
 import { QuestionAttachmentsRepository } from "../repositories/question-attachment-repository";
-import { QuestionAttachment } from "../../enterprises/entities/question-attachment";
-import { QuestionAttachmentList } from "../../enterprises/entities/question-attachment-list";
+import { QuestionAttachment } from "../../enterprise/entities/question-attachment";
+import { QuestionAttachmentList } from "../../enterprise/entities/question-attachment-list";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 
 interface EditQuestionUseCaseRequest {

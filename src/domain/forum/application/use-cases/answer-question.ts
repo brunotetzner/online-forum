@@ -1,9 +1,9 @@
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 import { AnswerRepository } from "../repositories/answer-repository";
-import { Answer } from "../../enterprises/entities/answer";
+import { Answer } from "../../enterprise/entities/answer";
 import { Either, right } from "@/core/either";
-import { AnswerAttachment } from "../../enterprises/entities/answer-attachment";
-import { AnswerAttachmentList } from "../../enterprises/entities/answer-attachment-list";
+import { AnswerAttachment } from "../../enterprise/entities/answer-attachment";
+import { AnswerAttachmentList } from "../../enterprise/entities/answer-attachment-list";
 interface AnswerQuestionUseCaseRequest {
   instructorId: string;
   questionId: string;

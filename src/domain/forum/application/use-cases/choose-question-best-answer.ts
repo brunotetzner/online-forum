@@ -1,5 +1,5 @@
 import { AnswerRepository } from "../repositories/answer-repository";
-import { Question } from "@/domain/forum/enterprises/entities/question";
+import { Question } from "@/domain/forum/enterprise/entities/question";
 import { QuestionRepository } from "@/domain/forum/application/repositories/question-repository";
 import { Either, left, right } from "@/core/either";
 import { ResourceNotFoundError } from "@/domain/forum/application/use-cases/errors/resource-not-found";
