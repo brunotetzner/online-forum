@@ -3,6 +3,7 @@ import { QuestionRepository } from "@/domain/forum/application/repositories/ques
 import { Question } from "@/domain/forum/enterprise/entities/question";
 import { Slug } from "@/domain/forum/enterprise/entities/value-objec/slug";
 import { QuestionAttachmentsRepository } from "@/domain/forum/application/repositories/question-attachment-repository";
+import { DomainEvents } from "@/core/events/domain-events";
 
 export class InMemoryQuestionsRepository implements QuestionRepository {
   public items: Question[] = [];
@@ -30,11 +31,13 @@ export class InMemoryQuestionsRepository implements QuestionRepository {
     );
   }
   async create(question: Question): Promise<void> {
+    DomainEvents.dispatchEventsForAggregate(question.id);
     this.items.push(question);
   }
   async save(question: Question): Promise<void> {
     const itemIndex = this.items.findIndex((item) => item.id === question.id);
     this.items[itemIndex] = question;
+    DomainEvents.dispatchEventsForAggregate(question.id);
   }
   async findBySlug(slug: Slug): Promise<Question | null> {
     return (
